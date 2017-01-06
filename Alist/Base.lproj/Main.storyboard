@@ -1,26 +1,158 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="PatuaOne-Regular.ttf">
+            <string>PatuaOne-Regular</string>
+        </array>
+        <array key="RSU_Regular.ttf">
+            <string>RSU</string>
+        </array>
+        <array key="RSU_light.ttf">
+            <string>RSU-Light</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Alist" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgPrePage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="eDZ-wk-6C7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alistLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="rhk-Fh-eRj">
+                                <rect key="frame" x="126" y="48" width="69" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="6yd-sp-Z9y"/>
+                                    <constraint firstAttribute="height" constant="80" id="TuX-lf-ZpH"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFg-Mi-egg">
+                                <rect key="frame" x="111" y="136" width="98" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="98" id="1mm-8a-0zD"/>
+                                    <constraint firstAttribute="height" constant="45" id="Wtr-DB-Ohu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PatuaOne-Regular" family="Patua One" pointSize="48"/>
+                                <color key="textColor" red="0.99019607840000001" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 0.0.1 (BETA)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sng-Cs-7ck">
+                                <rect key="frame" x="124.5" y="189" width="71" height="15"/>
+                                <fontDescription key="fontDescription" name="PatuaOne-Regular" family="Patua One" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To-Do-List ที่ช่วยคุณกันลืม" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6GI-xM-Llz">
+                                <rect key="frame" x="43" y="230" width="234" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="7kh-Ys-ltq"/>
+                                    <constraint firstAttribute="width" constant="234" id="Byj-hT-dY8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="RSU" family="RSU" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ที่สามารถใช้ได้ในทุก Platform" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dv-FB-OzF">
+                                <rect key="frame" x="37" y="270" width="246" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="246" id="85e-t5-NhJ"/>
+                                    <constraint firstAttribute="height" constant="39" id="8Nt-Lz-ZUE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="RSU" family="RSU" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ระบบใหม่อัพเดท 06/01/2017" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAw-XH-WoP">
+                                <rect key="frame" x="36" y="331" width="186" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="186" id="Nfs-jn-gla"/>
+                                    <constraint firstAttribute="height" constant="25" id="Pq4-mw-3ip"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="RSU-Light" family="RSU" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4o9-Gg-LKa">
+                                <rect key="frame" x="36" y="359" width="130" height="27"/>
+                                <string key="text">- ระบบแบ่ง Category
+</string>
+                                <fontDescription key="fontDescription" name="RSU-Light" family="RSU" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- ระบบ Search" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvd-zB-XUA">
+                                <rect key="frame" x="36" y="386" width="92" height="27"/>
+                                <fontDescription key="fontDescription" name="RSU-Light" family="RSU" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L23-mA-USo">
+                                <rect key="frame" x="23" y="491" width="274" height="57"/>
+                                <color key="backgroundColor" red="0.0" green="0.69803921568627447" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="FD5-zQ-Yu0"/>
+                                    <constraint firstAttribute="width" constant="274" id="a8N-MC-y4g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="RSU" family="RSU" pointSize="24"/>
+                                <state key="normal" title="เริ่มต้นใช้งาน ALIST">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tvd-zB-XUA" firstAttribute="leading" secondItem="4o9-Gg-LKa" secondAttribute="leading" id="31Z-Yv-EMO"/>
+                            <constraint firstItem="rhk-Fh-eRj" firstAttribute="centerX" secondItem="eDZ-wk-6C7" secondAttribute="centerX" id="ABe-W6-wOU"/>
+                            <constraint firstItem="4o9-Gg-LKa" firstAttribute="top" secondItem="ZAw-XH-WoP" secondAttribute="bottom" constant="3" id="I1p-To-mer"/>
+                            <constraint firstItem="sng-Cs-7ck" firstAttribute="centerX" secondItem="iFg-Mi-egg" secondAttribute="centerX" id="Kq3-pF-ohE"/>
+                            <constraint firstItem="6GI-xM-Llz" firstAttribute="top" secondItem="sng-Cs-7ck" secondAttribute="bottom" constant="26" id="L3u-WM-3bz"/>
+                            <constraint firstItem="6GI-xM-Llz" firstAttribute="centerX" secondItem="sng-Cs-7ck" secondAttribute="centerX" id="Lny-wP-nU6"/>
+                            <constraint firstAttribute="trailing" secondItem="L23-mA-USo" secondAttribute="trailing" constant="23" id="SFV-K1-ypU"/>
+                            <constraint firstItem="6dv-FB-OzF" firstAttribute="centerX" secondItem="6GI-xM-Llz" secondAttribute="centerX" id="V3g-qo-FFN"/>
+                            <constraint firstItem="6dv-FB-OzF" firstAttribute="top" secondItem="6GI-xM-Llz" secondAttribute="bottom" constant="-7" id="Z1W-pd-cy5"/>
+                            <constraint firstItem="ZAw-XH-WoP" firstAttribute="top" secondItem="6dv-FB-OzF" secondAttribute="bottom" constant="22" id="amv-Hv-QOH"/>
+                            <constraint firstItem="ZAw-XH-WoP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="36" id="cOs-Lx-7rt"/>
+                            <constraint firstItem="tvd-zB-XUA" firstAttribute="top" secondItem="4o9-Gg-LKa" secondAttribute="bottom" id="gqr-PR-WF7"/>
+                            <constraint firstItem="eDZ-wk-6C7" firstAttribute="top" secondItem="rhk-Fh-eRj" secondAttribute="bottom" constant="-128" id="ht1-nx-wdU"/>
+                            <constraint firstAttribute="trailing" secondItem="eDZ-wk-6C7" secondAttribute="trailing" id="iUL-gd-0xf"/>
+                            <constraint firstItem="eDZ-wk-6C7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iw8-lO-Wbw"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eDZ-wk-6C7" secondAttribute="bottom" id="m2t-vu-CSS"/>
+                            <constraint firstItem="sng-Cs-7ck" firstAttribute="top" secondItem="iFg-Mi-egg" secondAttribute="bottom" constant="8" id="mYP-MC-Uk1"/>
+                            <constraint firstItem="L23-mA-USo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="23" id="o8k-8V-D94"/>
+                            <constraint firstItem="4o9-Gg-LKa" firstAttribute="leading" secondItem="ZAw-XH-WoP" secondAttribute="leading" id="pN4-fg-jZf"/>
+                            <constraint firstItem="eDZ-wk-6C7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="pRQ-4Z-Jur"/>
+                            <constraint firstItem="iFg-Mi-egg" firstAttribute="centerX" secondItem="rhk-Fh-eRj" secondAttribute="centerX" id="r57-65-Vhj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="L23-mA-USo" secondAttribute="bottom" constant="20" id="sQN-h4-kvA"/>
+                            <constraint firstItem="iFg-Mi-egg" firstAttribute="top" secondItem="rhk-Fh-eRj" secondAttribute="bottom" constant="8" id="yXG-hY-WSh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="startBtn" destination="L23-mA-USo" id="K0W-y7-O0M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="116.25" y="123.59154929577466"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="alistLogo.png" width="75" height="84"/>
+        <image name="bgPrePage.jpg" width="375" height="667"/>
+    </resources>
 </document>

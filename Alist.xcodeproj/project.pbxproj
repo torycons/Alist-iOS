@@ -13,6 +13,11 @@
 		D0EE6BD41E20302A004850A6 /* Alist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0EE6BD21E20302A004850A6 /* Alist.xcdatamodeld */; };
 		D0EE6BD61E20302A004850A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0EE6BD51E20302A004850A6 /* Assets.xcassets */; };
 		D0EE6BD91E20302A004850A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0EE6BD71E20302A004850A6 /* LaunchScreen.storyboard */; };
+		D0EE6BE21E2030FD004850A6 /* alistLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = D0EE6BE01E2030FD004850A6 /* alistLogo.png */; };
+		D0EE6BE31E2030FD004850A6 /* bgPrePage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D0EE6BE11E2030FD004850A6 /* bgPrePage.jpg */; };
+		D0EE6BE91E2036F7004850A6 /* RSU_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0EE6BE71E2034A6004850A6 /* RSU_Regular.ttf */; };
+		D0EE6BEA1E2036F7004850A6 /* RSU_light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0EE6BE81E203589004850A6 /* RSU_light.ttf */; };
+		D0EE6BEB1E2036F7004850A6 /* PatuaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0EE6BE51E2032C8004850A6 /* PatuaOne-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		D0EE6BD51E20302A004850A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0EE6BD81E20302A004850A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0EE6BDA1E20302A004850A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0EE6BE01E2030FD004850A6 /* alistLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alistLogo.png; sourceTree = "<group>"; };
+		D0EE6BE11E2030FD004850A6 /* bgPrePage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bgPrePage.jpg; sourceTree = "<group>"; };
+		D0EE6BE51E2032C8004850A6 /* PatuaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PatuaOne-Regular.ttf"; sourceTree = "<group>"; };
+		D0EE6BE71E2034A6004850A6 /* RSU_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RSU_Regular.ttf; sourceTree = "<group>"; };
+		D0EE6BE81E203589004850A6 /* RSU_light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RSU_light.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +66,9 @@
 		D0EE6BCA1E20302A004850A6 /* Alist */ = {
 			isa = PBXGroup;
 			children = (
+				D0EE6BE41E20324F004850A6 /* Fonts */,
+				D0EE6BE01E2030FD004850A6 /* alistLogo.png */,
+				D0EE6BE11E2030FD004850A6 /* bgPrePage.jpg */,
 				D0EE6BCB1E20302A004850A6 /* AppDelegate.swift */,
 				D0EE6BCD1E20302A004850A6 /* ViewController.swift */,
 				D0EE6BCF1E20302A004850A6 /* Main.storyboard */,
@@ -65,6 +78,16 @@
 				D0EE6BD21E20302A004850A6 /* Alist.xcdatamodeld */,
 			);
 			path = Alist;
+			sourceTree = "<group>";
+		};
+		D0EE6BE41E20324F004850A6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D0EE6BE71E2034A6004850A6 /* RSU_Regular.ttf */,
+				D0EE6BE81E203589004850A6 /* RSU_light.ttf */,
+				D0EE6BE51E2032C8004850A6 /* PatuaOne-Regular.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,8 +149,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0EE6BE91E2036F7004850A6 /* RSU_Regular.ttf in Resources */,
+				D0EE6BEA1E2036F7004850A6 /* RSU_light.ttf in Resources */,
+				D0EE6BEB1E2036F7004850A6 /* PatuaOne-Regular.ttf in Resources */,
 				D0EE6BD91E20302A004850A6 /* LaunchScreen.storyboard in Resources */,
 				D0EE6BD61E20302A004850A6 /* Assets.xcassets in Resources */,
+				D0EE6BE21E2030FD004850A6 /* alistLogo.png in Resources */,
+				D0EE6BE31E2030FD004850A6 /* bgPrePage.jpg in Resources */,
 				D0EE6BD11E20302A004850A6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
