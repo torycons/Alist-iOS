@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  preAppVC.swift
 //  Alist
 //
 //  Created by Thanapat Sorralump on 1/7/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class preAppVC: UIViewController {
 
     @IBOutlet weak var startBtn: UIButton!
     
@@ -18,12 +18,5 @@ class ViewController: UIViewController {
         startBtn.layer.cornerRadius = 8
 
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 

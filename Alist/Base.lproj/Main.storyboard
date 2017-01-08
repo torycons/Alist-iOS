@@ -20,10 +20,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Pre AppVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Alist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="preAppVC" customModule="Alist" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -35,7 +35,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgPrePage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="eDZ-wk-6C7">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alistLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="rhk-Fh-eRj">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alist-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="rhk-Fh-eRj">
                                 <rect key="frame" x="126" y="48" width="69" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="69" id="6yd-sp-Z9y"/>
@@ -53,7 +53,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 0.0.1 (BETA)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sng-Cs-7ck">
-                                <rect key="frame" x="124.5" y="189" width="71" height="15"/>
+                                <rect key="frame" x="125" y="189" width="71" height="15"/>
                                 <fontDescription key="fontDescription" name="PatuaOne-Regular" family="Patua One" pointSize="12"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -113,6 +113,9 @@
                                 <state key="normal" title="เริ่มต้นใช้งาน ALIST">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="6We-Qq-VAD" kind="show" id="t6C-Kk-lSb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -143,16 +146,242 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="startBtn" destination="L23-mA-USo" id="K0W-y7-O0M"/>
+                        <outlet property="startBtn" destination="L23-mA-USo" id="bSc-1x-UKM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="116.25" y="123.59154929577466"/>
         </scene>
+        <!--Alist-->
+        <scene sceneID="tq3-ml-JQF">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="C9c-DK-oIr" customClass="mainListVC" customModule="Alist" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4ja-Ay-79s"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pks-kK-qWe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mXP-Dv-csQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rdf-YW-9ye">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="IT1-39-qSe">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IT1-39-qSe" id="b0f-GM-uDz">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QVk-ZW-Enz">
+                                                    <rect key="frame" x="24" y="16" width="56" height="56"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKT-VW-b3k">
+                                                    <rect key="frame" x="102" y="16" width="87" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
+                                                    <color key="textColor" red="0.011764705882352941" green="0.011764705882352941" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twO-Xn-bZf">
+                                                    <rect key="frame" x="102" y="45" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="12"/>
+                                                    <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12/12/12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cz6-7U-swv">
+                                                    <rect key="frame" x="243" y="18" width="61" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oQd-ot-e9I">
+                                                    <rect key="frame" x="289" y="49" width="15" height="13"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="rdf-YW-9ye" secondAttribute="trailing" id="ame-bN-waD"/>
+                            <constraint firstItem="rdf-YW-9ye" firstAttribute="top" secondItem="4ja-Ay-79s" secondAttribute="bottom" id="kgG-KQ-OLV"/>
+                            <constraint firstItem="rdf-YW-9ye" firstAttribute="leading" secondItem="mXP-Dv-csQ" secondAttribute="leading" id="lEO-Kv-Vha"/>
+                            <constraint firstItem="Pks-kK-qWe" firstAttribute="top" secondItem="rdf-YW-9ye" secondAttribute="bottom" id="zDD-Uh-Gg9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Alist" id="UUN-Pb-l3r">
+                        <barButtonItem key="rightBarButtonItem" image="circle-add" style="done" id="IHx-cM-Hxg">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="eo3-WZ-Iqn" kind="show" id="8tu-Lg-Sye"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="taskListTable" destination="rdf-YW-9ye" id="Hx4-LK-LFU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GCc-YU-MwH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3009.375" y="122.53521126760563"/>
+        </scene>
+        <!--เกี่ยวกับ Alist-->
+        <scene sceneID="OYC-JF-rkU">
+            <objects>
+                <viewController id="bwq-9f-gSP" customClass="aboutVC" customModule="Alist" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ttb-VZ-3Ey"/>
+                        <viewControllerLayoutGuide type="bottom" id="fIc-Od-zpG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="phU-eg-FBF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNO-3b-IVr">
+                                <rect key="frame" x="108" y="267" width="104" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="alist.com"/>
+                                <connections>
+                                    <segue destination="RLw-rN-18f" kind="show" id="IHS-Sh-ws3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="เกี่ยวกับ Alist" id="20F-OX-qfA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y7b-Dy-bW8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3007.5" y="900"/>
+        </scene>
+        <!--WebVC-->
+        <scene sceneID="JYc-Pi-8ea">
+            <objects>
+                <viewController id="RLw-rN-18f" customClass="webVC" customModule="Alist" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kvk-rZ-BS3"/>
+                        <viewControllerLayoutGuide type="bottom" id="hUt-9j-9pD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iCS-qP-CGC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TOR-1H-qVq">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="TOR-1H-qVq" secondAttribute="bottom" id="5hA-6r-1MD"/>
+                            <constraint firstItem="TOR-1H-qVq" firstAttribute="top" secondItem="iCS-qP-CGC" secondAttribute="top" id="bhk-k7-zbD"/>
+                            <constraint firstAttribute="trailing" secondItem="TOR-1H-qVq" secondAttribute="trailing" id="doh-Fb-Xud"/>
+                            <constraint firstItem="TOR-1H-qVq" firstAttribute="leading" secondItem="iCS-qP-CGC" secondAttribute="leading" id="mhA-dc-urJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="TOR-1H-qVq" id="uWZ-1z-mEt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PiX-kk-cz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3967.5" y="893.66197183098598"/>
+        </scene>
+        <!--Add TaskVC-->
+        <scene sceneID="z8u-P3-43S">
+            <objects>
+                <viewController id="eo3-WZ-Iqn" customClass="addTaskVC" customModule="Alist" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X9k-Sr-XtX"/>
+                        <viewControllerLayoutGuide type="bottom" id="6L6-NP-QpL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VuC-qf-3PW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6IA-6q-2ne" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3967" y="124"/>
+        </scene>
+        <!--Task List-->
+        <scene sceneID="4LX-M0-BbD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bCv-II-bHZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Task List" image="task-list" id="kqK-Bu-GAI"/>
+                    <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Adv-jr-uK3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="C9c-DK-oIr" kind="relationship" relationship="rootViewController" id="YOp-Tr-exJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aZs-QG-CNm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2011.875" y="122.53521126760563"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ArX-Oz-ZxT">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="6We-Qq-VAD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="VuA-VR-zMF">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="bCv-II-bHZ" kind="relationship" relationship="viewControllers" id="jLa-Kz-Kql"/>
+                        <segue destination="rz6-yv-BBl" kind="relationship" relationship="viewControllers" id="163-5k-7gh"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dau-oi-zOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1014.375" y="122.53521126760563"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="PIe-N4-OJs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rz6-yv-BBl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="About" image="about-icon" id="tbK-Ki-rYf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IYb-f2-QVC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bwq-9f-gSP" kind="relationship" relationship="rootViewController" id="vKa-gv-rj8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SiR-G9-hDa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2012" y="900"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="alistLogo.png" width="75" height="84"/>
+        <image name="Alist-Logo" width="75" height="84"/>
+        <image name="about-icon" width="21" height="6"/>
         <image name="bgPrePage.jpg" width="375" height="667"/>
+        <image name="circle-add" width="21" height="21"/>
+        <image name="task-list" width="20" height="24"/>
     </resources>
 </document>
