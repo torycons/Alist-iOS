@@ -11,7 +11,6 @@
 		D031EB001E20F3E100CAB8BC /* addTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031EAFF1E20F3E100CAB8BC /* addTaskVC.swift */; };
 		D031EB041E210A8800CAB8BC /* aboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031EB031E210A8800CAB8BC /* aboutVC.swift */; };
 		D031EB061E210C5000CAB8BC /* webVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031EB051E210C5000CAB8BC /* webVC.swift */; };
-		D031EB0A1E21455000CAB8BC /* mainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031EB091E21455000CAB8BC /* mainTableViewCell.swift */; };
 		D0EE6BCC1E20302A004850A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE6BCB1E20302A004850A6 /* AppDelegate.swift */; };
 		D0EE6BCE1E20302A004850A6 /* preAppVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE6BCD1E20302A004850A6 /* preAppVC.swift */; };
 		D0EE6BD11E20302A004850A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0EE6BCF1E20302A004850A6 /* Main.storyboard */; };
@@ -29,7 +28,6 @@
 		D031EAFF1E20F3E100CAB8BC /* addTaskVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addTaskVC.swift; sourceTree = "<group>"; };
 		D031EB031E210A8800CAB8BC /* aboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aboutVC.swift; sourceTree = "<group>"; };
 		D031EB051E210C5000CAB8BC /* webVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = webVC.swift; sourceTree = "<group>"; };
-		D031EB091E21455000CAB8BC /* mainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainTableViewCell.swift; sourceTree = "<group>"; };
 		D0EE6BC81E20302A004850A6 /* Alist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0EE6BCB1E20302A004850A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0EE6BCD1E20302A004850A6 /* preAppVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = preAppVC.swift; sourceTree = "<group>"; };
@@ -103,7 +101,6 @@
 				D0EE6BD71E20302A004850A6 /* LaunchScreen.storyboard */,
 				D0EE6BDA1E20302A004850A6 /* Info.plist */,
 				D0EE6BD21E20302A004850A6 /* Alist.xcdatamodeld */,
-				D031EB091E21455000CAB8BC /* mainTableViewCell.swift */,
 			);
 			path = Alist;
 			sourceTree = "<group>";
@@ -196,7 +193,6 @@
 			files = (
 				D031EB001E20F3E100CAB8BC /* addTaskVC.swift in Sources */,
 				D0EE6BD41E20302A004850A6 /* Alist.xcdatamodeld in Sources */,
-				D031EB0A1E21455000CAB8BC /* mainTableViewCell.swift in Sources */,
 				D001DC311E20CEAE00488109 /* mainListVC.swift in Sources */,
 				D0EE6BCE1E20302A004850A6 /* preAppVC.swift in Sources */,
 				D031EB041E210A8800CAB8BC /* aboutVC.swift in Sources */,
@@ -329,6 +325,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.campus.Alist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -341,6 +338,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.campus.Alist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
