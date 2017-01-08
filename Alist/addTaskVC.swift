@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class addTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
@@ -17,13 +18,16 @@ class addTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
     @IBOutlet weak var detailTextView: UITextField!
     @IBOutlet weak var typeBtn: UITextField!
     @IBOutlet weak var dateBtn: UITextField!
-    @IBOutlet weak var favBtn: UILabel!
+    @IBOutlet weak var importantBtn: UISwitch!
     @IBOutlet weak var saveBtn: UIButton!
+    
     
     let thonburiFont = UIFont(name: "Thonburi", size: 17)
     let typeArr : [String] = ["Personal", "Work", "Hobby", "Other"]
     let typePickerView = UIPickerView()
 
+    var myListTask : NSManagedObject?
+    
     override func viewWillAppear(_ animated: Bool) {
         // set font for navigationBar
         self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: thonburiFont!, NSForegroundColorAttributeName: UIColor.white]
@@ -60,7 +64,22 @@ class addTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
         
         //corner radius for saveBtn
         saveBtn.layer.cornerRadius = 8
+        
+        if myListTask != nil {
+            let myTaskTopic = myListTask?.value(forKey: "listTopic") as! String
+            let myTaskDetail = myListTask?.value(forKey: "listDetail") as! String
+            let myTaskType = myListTask?.value(forKey: "listType") as! String
+            let myTaskDate = myListTask?.value(forKey: "listDate") as! String
+            let myTaskImportant = myListTask?.value(forKey: "listImportant") as! Bool
+            
+            topicTextView.text = myTaskTopic
+            detailTextView.text = myTaskDetail
+            typeBtn.text = myTaskType
+            dateBtn.text = myTaskDate
+            importantBtn.isOn = myTaskImportant
+        }
     }
+    
     
     // return button for close keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -116,6 +135,35 @@ class addTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
     }
     
     @IBAction func saveList(_ sender: Any) {
+        let myAppDelegate = UIApplication.shared.delegate as! AppDelegate
+        let myContext = myAppDelegate.persistentContainer.viewContext
+        
+        if myListTask != nil{
+            myListTask?.setValue(topicTextView.text!, forKey: "listTopic")
+            myListTask?.setValue(detailTextView.text!, forKey: "listDetail")
+            myListTask?.setValue(typeBtn.text!, forKey: "listType")
+            myListTask?.setValue(dateBtn.text!, forKey: "listDate")
+            myListTask?.setValue(Bool(importantBtn.isOn), forKey: "listImportant")
+        } else {
+            let newTaskList = NSEntityDescription.insertNewObject(forEntityName: "Tasks", into: myContext)
+            newTaskList.setValue(topicTextView.text!, forKey: "listTopic")
+            newTaskList.setValue(detailTextView.text!, forKey: "listDetail")
+            newTaskList.setValue(typeBtn.text!, forKey: "listType")
+            newTaskList.setValue(dateBtn.text!, forKey: "listDate")
+            newTaskList.setValue(Bool(importantBtn.isOn), forKey: "listImportant")
+        }
+        
+        do{
+            try myContext.save()
+            print("save data done")
+        } catch let error as NSError{
+            print(error.description + " : can't save data")
+        }
+        
+        guard ((navigationController?.popViewController(animated: true)) != nil) else {
+            print("No nevigation Controller")
+            return
+        }
     }
     
 

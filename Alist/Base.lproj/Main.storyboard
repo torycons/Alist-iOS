@@ -171,7 +171,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listCell" rowHeight="90" id="IT1-39-qSe">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listCell" rowHeight="90" id="IT1-39-qSe" customClass="customCell" customModule="Alist" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IT1-39-qSe" id="b0f-GM-uDz">
@@ -179,19 +179,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QVk-ZW-Enz">
-                                                    <rect key="frame" x="24" y="16" width="56" height="56"/>
+                                                    <rect key="frame" x="14" y="16" width="56" height="56"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="QVk-ZW-Enz" secondAttribute="height" multiplier="1:1" id="iFJ-MK-ZeG"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKT-VW-b3k">
-                                                    <rect key="frame" x="102" y="16" width="44" height="23"/>
+                                                    <rect key="frame" x="82" y="16" width="44" height="23"/>
                                                     <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="17"/>
                                                     <color key="textColor" red="0.011764705882352941" green="0.011764705882352941" blue="0.011764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twO-Xn-bZf">
-                                                    <rect key="frame" x="102" y="48" width="31" height="16"/>
+                                                    <rect key="frame" x="82" y="48" width="31" height="16"/>
                                                     <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="12"/>
                                                     <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -212,7 +212,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="twO-Xn-bZf" firstAttribute="top" secondItem="YKT-VW-b3k" secondAttribute="bottom" constant="9" id="Fpu-dY-C45"/>
-                                                <constraint firstItem="YKT-VW-b3k" firstAttribute="leading" secondItem="QVk-ZW-Enz" secondAttribute="trailing" constant="22" id="MQQ-LH-EtZ"/>
+                                                <constraint firstItem="YKT-VW-b3k" firstAttribute="leading" secondItem="QVk-ZW-Enz" secondAttribute="trailing" constant="12" id="MQQ-LH-EtZ"/>
                                                 <constraint firstItem="QVk-ZW-Enz" firstAttribute="top" secondItem="b0f-GM-uDz" secondAttribute="topMargin" constant="8" id="UVJ-V7-vtQ"/>
                                                 <constraint firstItem="cz6-7U-swv" firstAttribute="centerY" secondItem="YKT-VW-b3k" secondAttribute="centerY" id="XIV-QO-WOO"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="cz6-7U-swv" secondAttribute="trailing" constant="8" id="Y4r-r5-1ro"/>
@@ -220,10 +220,17 @@
                                                 <constraint firstItem="twO-Xn-bZf" firstAttribute="leading" secondItem="YKT-VW-b3k" secondAttribute="leading" id="bie-7q-24W"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="QVk-ZW-Enz" secondAttribute="bottom" constant="9" id="gGl-y4-xvT"/>
                                                 <constraint firstItem="YKT-VW-b3k" firstAttribute="top" secondItem="b0f-GM-uDz" secondAttribute="topMargin" constant="8" id="iKq-zo-vSS"/>
-                                                <constraint firstItem="QVk-ZW-Enz" firstAttribute="leading" secondItem="b0f-GM-uDz" secondAttribute="leadingMargin" constant="16" id="oT6-ec-7Vt"/>
+                                                <constraint firstItem="QVk-ZW-Enz" firstAttribute="leading" secondItem="b0f-GM-uDz" secondAttribute="leadingMargin" constant="6" id="oT6-ec-7Vt"/>
                                                 <constraint firstItem="oQd-ot-e9I" firstAttribute="trailing" secondItem="cz6-7U-swv" secondAttribute="trailing" id="t6D-tT-gAM"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="taskDate" destination="cz6-7U-swv" id="xy1-co-szO"/>
+                                            <outlet property="taskDetail" destination="twO-Xn-bZf" id="kNI-4X-4Qh"/>
+                                            <outlet property="taskImportant" destination="oQd-ot-e9I" id="OmN-PU-Rvm"/>
+                                            <outlet property="taskTopic" destination="YKT-VW-b3k" id="Zql-eK-vow"/>
+                                            <outlet property="taskType" destination="QVk-ZW-Enz" id="tsl-UG-0VD"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -374,7 +381,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ความสำคัญ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4f-gG-wks">
-                                <rect key="frame" x="21" y="385" width="278" height="21"/>
+                                <rect key="frame" x="21" y="385" width="86" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -454,7 +461,7 @@
                             <constraint firstItem="oSY-4O-jXb" firstAttribute="trailing" secondItem="UEs-qY-e9e" secondAttribute="trailing" id="a3u-J7-Fxy"/>
                             <constraint firstItem="V4f-gG-wks" firstAttribute="top" secondItem="krk-br-ow2" secondAttribute="bottom" constant="17" id="aNh-Lg-eEg"/>
                             <constraint firstItem="UEs-qY-e9e" firstAttribute="top" secondItem="mSj-UU-l6k" secondAttribute="bottom" constant="8" id="ceJ-aT-ydn"/>
-                            <constraint firstItem="Nqd-Ho-1Le" firstAttribute="centerX" secondItem="V4f-gG-wks" secondAttribute="centerX" id="etT-Om-Xqz"/>
+                            <constraint firstItem="Nqd-Ho-1Le" firstAttribute="centerX" secondItem="V4f-gG-wks" secondAttribute="centerX" constant="96" id="etT-Om-Xqz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Nqd-Ho-1Le" secondAttribute="trailing" constant="7" id="fSP-80-ssT"/>
                             <constraint firstItem="vIl-Jc-jgr" firstAttribute="leading" secondItem="VuC-qf-3PW" secondAttribute="leadingMargin" constant="5" id="o3l-j2-X5F"/>
                             <constraint firstItem="na5-1K-F1f" firstAttribute="centerX" secondItem="VuC-qf-3PW" secondAttribute="centerX" id="oma-2C-9qZ"/>
@@ -471,7 +478,7 @@
                         <outlet property="dateBtn" destination="EG9-HQ-ekj" id="9ag-1E-Uv4"/>
                         <outlet property="detailText" destination="o3Z-3I-1yq" id="yUd-IQ-AF6"/>
                         <outlet property="detailTextView" destination="UEs-qY-e9e" id="Bze-i0-AmP"/>
-                        <outlet property="favBtn" destination="V4f-gG-wks" id="3kh-TH-uTP"/>
+                        <outlet property="importantBtn" destination="pOb-zE-jFK" id="ZFk-e5-31t"/>
                         <outlet property="saveBtn" destination="Nqd-Ho-1Le" id="RVy-vg-vdI"/>
                         <outlet property="topicImage" destination="na5-1K-F1f" id="4Ex-1w-QGw"/>
                         <outlet property="topicTextView" destination="vIl-Jc-jgr" id="5IT-gu-2WM"/>
