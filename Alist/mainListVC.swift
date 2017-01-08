@@ -78,13 +78,32 @@ class mainListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        let myAppDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let myContext = myAppDelegate.persistentContainer.viewContext
+//        
+//        
+//        if editingStyle == .delete {
+//            myContext.delete(myList![indexPath.row] as! NSManagedObject)
+//            myList!.remove(at: indexPath.row)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
+//            
+//            do {
+//                try myContext.save()
+//            } catch let error as NSError {
+//                print(error.description)
+//            }
+//        }
+//    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let myAppDelegate = UIApplication.shared.delegate as! AppDelegate
         let myContext = myAppDelegate.persistentContainer.viewContext
         
-        if editingStyle == .delete {
-            myContext.delete(myList![indexPath.row] as! NSManagedObject)
-            myList!.remove(at: indexPath.row)
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") {action in
+            //handle delete
+            myContext.delete(self.myList![indexPath.row] as! NSManagedObject)
+            self.myList!.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             
             do {
@@ -93,8 +112,14 @@ class mainListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 print(error.description)
             }
         }
+        
+        let editAction = UITableViewRowAction(style: .normal, title: "Edit") {action in
+            //handle edit
+        }
+        
+        return [deleteAction, editAction]
     }
-    
+
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()

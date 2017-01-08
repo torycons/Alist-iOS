@@ -35,7 +35,8 @@ class addTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(typeBtn.text!)
+        print(dateBtn.text!)
         //edit navigation bar
         self.title = "เพิ่มการแจ้งเตือนใหม่"
         self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "back")
@@ -135,36 +136,51 @@ class addTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
     }
     
     @IBAction func saveList(_ sender: Any) {
-        let myAppDelegate = UIApplication.shared.delegate as! AppDelegate
-        let myContext = myAppDelegate.persistentContainer.viewContext
         
-        if myListTask != nil{
-            myListTask?.setValue(topicTextView.text!, forKey: "listTopic")
-            myListTask?.setValue(detailTextView.text!, forKey: "listDetail")
-            myListTask?.setValue(typeBtn.text!, forKey: "listType")
-            myListTask?.setValue(dateBtn.text!, forKey: "listDate")
-            myListTask?.setValue(Bool(importantBtn.isOn), forKey: "listImportant")
+        if topicTextView.text! == "" || detailTextView.text! == "" || typeBtn.text! == "กดเพื่อเลือกหัวข้อ" || dateBtn.text! == "กดเพื่อเลือกวันที่" {
+            
+            // alert if don't insert every text field
+            let alert = UIAlertController(title: "ใส่ข้อมูลไม่ครบ", message: "กรุณาใส่ข้อมูลให้ครบทุกช่องเพื่อดำเนินการต่อ", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
         } else {
-            let newTaskList = NSEntityDescription.insertNewObject(forEntityName: "Tasks", into: myContext)
-            newTaskList.setValue(topicTextView.text!, forKey: "listTopic")
-            newTaskList.setValue(detailTextView.text!, forKey: "listDetail")
-            newTaskList.setValue(typeBtn.text!, forKey: "listType")
-            newTaskList.setValue(dateBtn.text!, forKey: "listDate")
-            newTaskList.setValue(Bool(importantBtn.isOn), forKey: "listImportant")
+            
+            // app save with core data
+            let myAppDelegate = UIApplication.shared.delegate as! AppDelegate
+            let myContext = myAppDelegate.persistentContainer.viewContext
+            
+            if myListTask != nil{
+                myListTask?.setValue(topicTextView.text!, forKey: "listTopic")
+                myListTask?.setValue(detailTextView.text!, forKey: "listDetail")
+                myListTask?.setValue(typeBtn.text!, forKey: "listType")
+                myListTask?.setValue(dateBtn.text!, forKey: "listDate")
+                myListTask?.setValue(Bool(importantBtn.isOn), forKey: "listImportant")
+            } else {
+                let newTaskList = NSEntityDescription.insertNewObject(forEntityName: "Tasks", into: myContext)
+                newTaskList.setValue(topicTextView.text!, forKey: "listTopic")
+                newTaskList.setValue(detailTextView.text!, forKey: "listDetail")
+                newTaskList.setValue(typeBtn.text!, forKey: "listType")
+                newTaskList.setValue(dateBtn.text!, forKey: "listDate")
+                newTaskList.setValue(Bool(importantBtn.isOn), forKey: "listImportant")
+            }
+            
+            do{
+                try myContext.save()
+                print("save data done")
+            } catch let error as NSError{
+                print(error.description + " : can't save data")
+            }
+            
+            guard ((navigationController?.popViewController(animated: true)) != nil) else {
+                print("No nevigation Controller")
+                return
+            }
         }
+
+        }
+
         
-        do{
-            try myContext.save()
-            print("save data done")
-        } catch let error as NSError{
-            print(error.description + " : can't save data")
-        }
         
-        guard ((navigationController?.popViewController(animated: true)) != nil) else {
-            print("No nevigation Controller")
-            return
-        }
-    }
-    
 
 }
