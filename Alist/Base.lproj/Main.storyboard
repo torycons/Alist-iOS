@@ -280,6 +280,14 @@
                                     <segue destination="RLw-rN-18f" kind="show" id="IHS-Sh-ws3"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ym3-Ti-NXS">
+                                <rect key="frame" x="118" y="353" width="85" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="DELETE ALL"/>
+                                <connections>
+                                    <action selector="deleteAll:" destination="bwq-9f-gSP" eventType="touchUpInside" id="ZzP-F0-xFk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
