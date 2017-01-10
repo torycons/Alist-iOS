@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0000B261E255B8E00A4993C /* settingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0000B251E255B8E00A4993C /* settingVC.swift */; };
 		D001DC311E20CEAE00488109 /* mainListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D001DC301E20CEAE00488109 /* mainListVC.swift */; };
 		D031EB001E20F3E100CAB8BC /* addTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031EAFF1E20F3E100CAB8BC /* addTaskVC.swift */; };
 		D031EB041E210A8800CAB8BC /* aboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031EB031E210A8800CAB8BC /* aboutVC.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D0000B251E255B8E00A4993C /* settingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingVC.swift; sourceTree = "<group>"; };
 		D001DC301E20CEAE00488109 /* mainListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainListVC.swift; sourceTree = "<group>"; };
 		D031EAFF1E20F3E100CAB8BC /* addTaskVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addTaskVC.swift; sourceTree = "<group>"; };
 		D031EB031E210A8800CAB8BC /* aboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aboutVC.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				D031EAFF1E20F3E100CAB8BC /* addTaskVC.swift */,
 				D031EB031E210A8800CAB8BC /* aboutVC.swift */,
 				D031EB051E210C5000CAB8BC /* webVC.swift */,
+				D0000B251E255B8E00A4993C /* settingVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			files = (
 				D031EB001E20F3E100CAB8BC /* addTaskVC.swift in Sources */,
 				D0EE6BD41E20302A004850A6 /* Alist.xcdatamodeld in Sources */,
+				D0000B261E255B8E00A4993C /* settingVC.swift in Sources */,
 				D001DC311E20CEAE00488109 /* mainListVC.swift in Sources */,
 				D0EE6BCE1E20302A004850A6 /* preAppVC.swift in Sources */,
 				D031EB041E210A8800CAB8BC /* aboutVC.swift in Sources */,
