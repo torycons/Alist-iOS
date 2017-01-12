@@ -21,9 +21,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgPrePage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="eNl-nk-evS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgPrePage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="eNl-nk-evS">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alist-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="s4e-EL-CnO">
                                 <rect key="frame" x="123" y="242.5" width="75" height="84"/>
@@ -31,7 +30,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="eNl-nk-evS" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="2Pk-oY-RgO"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="eNl-nk-evS" secondAttribute="bottom" id="3Uw-yC-HUr"/>
+                            <constraint firstItem="eNl-nk-evS" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="K1u-PH-YLD"/>
                             <constraint firstItem="s4e-EL-CnO" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="WKe-Es-gkH"/>
+                            <constraint firstAttribute="trailing" secondItem="eNl-nk-evS" secondAttribute="trailing" id="aop-ff-KGw"/>
                             <constraint firstItem="s4e-EL-CnO" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ila-6l-SCx"/>
                         </constraints>
                     </view>

@@ -35,8 +35,7 @@ class addTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(typeBtn.text!)
-        print(dateBtn.text!)
+
         //edit navigation bar
         self.title = "เพิ่มการแจ้งเตือนใหม่"
         self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "back")

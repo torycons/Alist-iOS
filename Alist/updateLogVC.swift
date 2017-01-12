@@ -1,26 +1,29 @@
 //
-//  webVC.swift
+//  updateLogVC.swift
 //  Alist
 //
-//  Created by Thanapat Sorralump on 1/7/17.
+//  Created by Thanapat Sorralump on 1/13/17.
 //  Copyright © 2017 Thanapat Sorralump. All rights reserved.
 //
 
 import UIKit
 
-class webVC: UIViewController {
+class updateLogVC: UIViewController {
 
-    @IBOutlet weak var webView: UIWebView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         //edit navigation bar
-        self.title = "Alist.com"
+        self.title = "Update Log"
         self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "back")
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "back")
-
-        let url = URL(string: "https://camp191.github.io/Alist/app/index.html")
-        webView.loadRequest(URLRequest(url: url!))
     }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+
+
 }
