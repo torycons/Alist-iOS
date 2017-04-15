@@ -132,5 +132,6 @@ class mainListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
+        
     }
 }

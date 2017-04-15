@@ -20,7 +20,7 @@ class webVC: UIViewController {
         self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "back")
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "back")
 
-        let url = URL(string: "https://camp191.github.io/Alist/app/index.html")
+        let url = URL(string: "https://camp191.github.io/Alist-Front-End/app/index.html")
         webView.loadRequest(URLRequest(url: url!))
     }
 }

@@ -10,10 +10,12 @@
 		D0000B261E255B8E00A4993C /* settingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0000B251E255B8E00A4993C /* settingVC.swift */; };
 		D001DC311E20CEAE00488109 /* mainListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D001DC301E20CEAE00488109 /* mainListVC.swift */; };
 		D031EB001E20F3E100CAB8BC /* addTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031EAFF1E20F3E100CAB8BC /* addTaskVC.swift */; };
-		D031EB041E210A8800CAB8BC /* aboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031EB031E210A8800CAB8BC /* aboutVC.swift */; };
 		D031EB061E210C5000CAB8BC /* webVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031EB051E210C5000CAB8BC /* webVC.swift */; };
 		D031FD661E27F7DE009296C0 /* updateLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031FD651E27F7DE009296C0 /* updateLogVC.swift */; };
+		D0C74DDC1EA1E96000356C81 /* categoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C74DDB1EA1E96000356C81 /* categoryVC.swift */; };
+		D0C74DDE1EA1F4B100356C81 /* categoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C74DDD1EA1F4B100356C81 /* categoryListVC.swift */; };
 		D0CD23BA1E228794001316A3 /* customCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD23B91E228794001316A3 /* customCell.swift */; };
+		D0CE6BCF1EA22342006144C1 /* customCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CE6BCE1EA22342006144C1 /* customCategoryCell.swift */; };
 		D0EE6BCC1E20302A004850A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE6BCB1E20302A004850A6 /* AppDelegate.swift */; };
 		D0EE6BCE1E20302A004850A6 /* preAppVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EE6BCD1E20302A004850A6 /* preAppVC.swift */; };
 		D0EE6BD11E20302A004850A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0EE6BCF1E20302A004850A6 /* Main.storyboard */; };
@@ -30,10 +32,12 @@
 		D0000B251E255B8E00A4993C /* settingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = settingVC.swift; sourceTree = "<group>"; };
 		D001DC301E20CEAE00488109 /* mainListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainListVC.swift; sourceTree = "<group>"; };
 		D031EAFF1E20F3E100CAB8BC /* addTaskVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addTaskVC.swift; sourceTree = "<group>"; };
-		D031EB031E210A8800CAB8BC /* aboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aboutVC.swift; sourceTree = "<group>"; };
 		D031EB051E210C5000CAB8BC /* webVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = webVC.swift; sourceTree = "<group>"; };
 		D031FD651E27F7DE009296C0 /* updateLogVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = updateLogVC.swift; sourceTree = "<group>"; };
+		D0C74DDB1EA1E96000356C81 /* categoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = categoryVC.swift; sourceTree = "<group>"; };
+		D0C74DDD1EA1F4B100356C81 /* categoryListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = categoryListVC.swift; sourceTree = "<group>"; };
 		D0CD23B91E228794001316A3 /* customCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customCell.swift; sourceTree = "<group>"; };
+		D0CE6BCE1EA22342006144C1 /* customCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customCategoryCell.swift; sourceTree = "<group>"; };
 		D0EE6BC81E20302A004850A6 /* Alist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0EE6BCB1E20302A004850A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0EE6BCD1E20302A004850A6 /* preAppVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = preAppVC.swift; sourceTree = "<group>"; };
@@ -62,13 +66,14 @@
 		D001DC2F1E20CE7B00488109 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D0C74DDB1EA1E96000356C81 /* categoryVC.swift */,
 				D0EE6BCD1E20302A004850A6 /* preAppVC.swift */,
 				D001DC301E20CEAE00488109 /* mainListVC.swift */,
 				D031EAFF1E20F3E100CAB8BC /* addTaskVC.swift */,
-				D031EB031E210A8800CAB8BC /* aboutVC.swift */,
 				D031EB051E210C5000CAB8BC /* webVC.swift */,
 				D0000B251E255B8E00A4993C /* settingVC.swift */,
 				D031FD651E27F7DE009296C0 /* updateLogVC.swift */,
+				D0C74DDD1EA1F4B100356C81 /* categoryListVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -79,6 +84,15 @@
 				D0EE6BE11E2030FD004850A6 /* bgPrePage.jpg */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		D0CE6BD01EA22360006144C1 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				D0CD23B91E228794001316A3 /* customCell.swift */,
+				D0CE6BCE1EA22342006144C1 /* customCategoryCell.swift */,
+			);
+			name = CustomView;
 			sourceTree = "<group>";
 		};
 		D0EE6BBF1E20302A004850A6 = {
@@ -100,6 +114,7 @@
 		D0EE6BCA1E20302A004850A6 /* Alist */ = {
 			isa = PBXGroup;
 			children = (
+				D0CE6BD01EA22360006144C1 /* CustomView */,
 				D001DC321E20CED000488109 /* images */,
 				D001DC2F1E20CE7B00488109 /* ViewControllers */,
 				D0EE6BE41E20324F004850A6 /* Fonts */,
@@ -109,7 +124,6 @@
 				D0EE6BD71E20302A004850A6 /* LaunchScreen.storyboard */,
 				D0EE6BDA1E20302A004850A6 /* Info.plist */,
 				D0EE6BD21E20302A004850A6 /* Alist.xcdatamodeld */,
-				D0CD23B91E228794001316A3 /* customCell.swift */,
 			);
 			path = Alist;
 			sourceTree = "<group>";
@@ -200,12 +214,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0CE6BCF1EA22342006144C1 /* customCategoryCell.swift in Sources */,
+				D0C74DDC1EA1E96000356C81 /* categoryVC.swift in Sources */,
 				D031EB001E20F3E100CAB8BC /* addTaskVC.swift in Sources */,
 				D0EE6BD41E20302A004850A6 /* Alist.xcdatamodeld in Sources */,
+				D0C74DDE1EA1F4B100356C81 /* categoryListVC.swift in Sources */,
 				D0000B261E255B8E00A4993C /* settingVC.swift in Sources */,
 				D001DC311E20CEAE00488109 /* mainListVC.swift in Sources */,
 				D0EE6BCE1E20302A004850A6 /* preAppVC.swift in Sources */,
-				D031EB041E210A8800CAB8BC /* aboutVC.swift in Sources */,
 				D031FD661E27F7DE009296C0 /* updateLogVC.swift in Sources */,
 				D0EE6BCC1E20302A004850A6 /* AppDelegate.swift in Sources */,
 				D0CD23BA1E228794001316A3 /* customCell.swift in Sources */,
