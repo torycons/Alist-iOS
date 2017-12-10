@@ -30,7 +30,7 @@ class addTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
     
     override func viewWillAppear(_ animated: Bool) {
         // set font for navigationBar
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: thonburiFont!, NSForegroundColorAttributeName: UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: thonburiFont!, NSAttributedStringKey.foregroundColor: UIColor.white]
     }
     
     override func viewDidLoad() {
@@ -106,21 +106,21 @@ class addTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
     }
     
     //dismiss keyboard function
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         view.endEditing(true)
     }
     
     //keyboard show or hide
-    func keyboardWillShow(_ notification: NSNotification){
+    @objc func keyboardWillShow(_ notification: NSNotification){
         self.view.frame.origin.y = -75
         
     }
-    func keyboardWillHide(_ notification: NSNotification){
+    @objc func keyboardWillHide(_ notification: NSNotification){
         self.view.frame.origin.y = 63
     }
     
     //date picker function
-    func datePickerValue(sender:UIDatePicker) {
+    @objc func datePickerValue(sender:UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
         dateFormatter.timeStyle = .none

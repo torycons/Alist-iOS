@@ -18,7 +18,7 @@ class mainListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var myList : [AnyObject]? = []
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: patuaFont!, NSForegroundColorAttributeName: UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: patuaFont!, NSAttributedStringKey.foregroundColor: UIColor.white]
         
         let myAppDelegate = UIApplication.shared.delegate as! AppDelegate
         let myContext = myAppDelegate.persistentContainer.viewContext

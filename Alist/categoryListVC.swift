@@ -20,7 +20,7 @@ class categoryListVC: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var categoryTable: UITableView!
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: thonburiFont!, NSForegroundColorAttributeName: UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: thonburiFont!, NSAttributedStringKey.foregroundColor: UIColor.white]
         
         // read data from database
         let myAppDelegate = UIApplication.shared.delegate as! AppDelegate
