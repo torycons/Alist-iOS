@@ -7,5 +7,6 @@ target 'Alist' do
 
   # Pods for Alist
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
 
 end

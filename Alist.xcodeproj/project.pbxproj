@@ -14,6 +14,8 @@
 		D031EB001E20F3E100CAB8BC /* addTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031EAFF1E20F3E100CAB8BC /* addTaskVC.swift */; };
 		D031EB061E210C5000CAB8BC /* webVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031EB051E210C5000CAB8BC /* webVC.swift */; };
 		D031FD661E27F7DE009296C0 /* updateLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031FD651E27F7DE009296C0 /* updateLogVC.swift */; };
+		D0C66BEC1FDE6A1F00CEC0B7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C66BEB1FDE6A1F00CEC0B7 /* LoginVC.swift */; };
+		D0C66BEE1FDE6A5A00CEC0B7 /* registerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C66BED1FDE6A5A00CEC0B7 /* registerVC.swift */; };
 		D0C74DDC1EA1E96000356C81 /* categoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C74DDB1EA1E96000356C81 /* categoryVC.swift */; };
 		D0C74DDE1EA1F4B100356C81 /* categoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C74DDD1EA1F4B100356C81 /* categoryListVC.swift */; };
 		D0CD23BA1E228794001316A3 /* customCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CD23B91E228794001316A3 /* customCell.swift */; };
@@ -40,6 +42,8 @@
 		D031EAFF1E20F3E100CAB8BC /* addTaskVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addTaskVC.swift; sourceTree = "<group>"; };
 		D031EB051E210C5000CAB8BC /* webVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = webVC.swift; sourceTree = "<group>"; };
 		D031FD651E27F7DE009296C0 /* updateLogVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = updateLogVC.swift; sourceTree = "<group>"; };
+		D0C66BEB1FDE6A1F00CEC0B7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		D0C66BED1FDE6A5A00CEC0B7 /* registerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerVC.swift; sourceTree = "<group>"; };
 		D0C74DDB1EA1E96000356C81 /* categoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = categoryVC.swift; sourceTree = "<group>"; };
 		D0C74DDD1EA1F4B100356C81 /* categoryListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = categoryListVC.swift; sourceTree = "<group>"; };
 		D0CD23B91E228794001316A3 /* customCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customCell.swift; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 				D0000B251E255B8E00A4993C /* settingVC.swift */,
 				D031FD651E27F7DE009296C0 /* updateLogVC.swift */,
 				D0C74DDD1EA1F4B100356C81 /* categoryListVC.swift */,
+				D0C66BEB1FDE6A1F00CEC0B7 /* LoginVC.swift */,
+				D0C66BED1FDE6A5A00CEC0B7 /* registerVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -267,11 +273,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Alist/Pods-Alist-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -303,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0CE6BCF1EA22342006144C1 /* customCategoryCell.swift in Sources */,
+				D0C66BEE1FDE6A5A00CEC0B7 /* registerVC.swift in Sources */,
 				D0C74DDC1EA1E96000356C81 /* categoryVC.swift in Sources */,
 				D031EB001E20F3E100CAB8BC /* addTaskVC.swift in Sources */,
 				D0EE6BD41E20302A004850A6 /* Alist.xcdatamodeld in Sources */,
@@ -311,6 +320,7 @@
 				D001DC311E20CEAE00488109 /* mainListVC.swift in Sources */,
 				D0EE6BCE1E20302A004850A6 /* preAppVC.swift in Sources */,
 				D031FD661E27F7DE009296C0 /* updateLogVC.swift in Sources */,
+				D0C66BEC1FDE6A1F00CEC0B7 /* LoginVC.swift in Sources */,
 				D0EE6BCC1E20302A004850A6 /* AppDelegate.swift in Sources */,
 				D0CD23BA1E228794001316A3 /* customCell.swift in Sources */,
 				D031EB061E210C5000CAB8BC /* webVC.swift in Sources */,
