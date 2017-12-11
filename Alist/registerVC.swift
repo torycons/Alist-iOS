@@ -10,57 +10,53 @@ import UIKit
 import FirebaseAuth
 
 class registerVC: UIViewController {
-
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var password: UITextField!
+  
+  @IBOutlet weak var email: UITextField!
+  @IBOutlet weak var password: UITextField!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    @IBAction func register(_ sender: Any) {
-        let userData = UserDefaults.standard
+    // Do any additional setup after loading the view.
+  }
+  
+  @IBAction func register(_ sender: Any) {
+    Auth.auth().createUser(withEmail: email.text!, password: password.text!) { (user, error) in
+      if error != nil {
+        let errorAlert = UIAlertController(title: "พบข้อผิดพลาด", message: error?.localizedDescription, preferredStyle: .alert)
+        errorAlert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: { (action) in
+          self.password.text = ""
+        }))
         
-        Auth.auth().createUser(withEmail: email.text!, password: password.text!) { (user, error) in
-            if error != nil {
-                let errorAlert = UIAlertController(title: "พบข้อผิดพลาด", message: error?.localizedDescription, preferredStyle: .alert)
-                errorAlert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: { (action) in
-                    self.password.text = ""
-                }))
-                
-                self.present(errorAlert, animated: true, completion: nil)
-                
-            } else {
-                let registerAlert = UIAlertController(title: "สมัครเรียบร้อย", message: "สมัครใช้งาน Alist เรียบร้อยแล้ว คุณสามารถใช้งานได้ทันที", preferredStyle: .alert)
-                registerAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                    self.email.text = ""
-                    self.password.text = ""
-                    userData.set(self.email.text, forKey: "email")
-                    self.performSegue(withIdentifier: "registerUse", sender: self)
-                    print(userData.string(forKey: "email"))
-                }))
-                
-                self.present(registerAlert, animated: true, completion: nil)
-            }
-        }
+        self.present(errorAlert, animated: true, completion: nil)
+        
+      } else {
+        let registerAlert = UIAlertController(title: "สมัครเรียบร้อย", message: "สมัครใช้งาน Alist เรียบร้อยแล้ว คุณสามารถใช้งานได้ทันที", preferredStyle: .alert)
+        registerAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+          self.email.text = ""
+          self.password.text = ""
+          self.performSegue(withIdentifier: "registerUse", sender: self)
+        }))
+        
+        self.present(registerAlert, animated: true, completion: nil)
+      }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+  
+  
+  /*
+   // MARK: - Navigation
+   
+   // In a storyboard-based application, you will often want to do a little preparation before navigation
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   // Get the new view controller using segue.destinationViewController.
+   // Pass the selected object to the new view controller.
+   }
+   */
+  
 }

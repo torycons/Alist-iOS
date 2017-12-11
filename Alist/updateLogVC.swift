@@ -9,21 +9,21 @@
 import UIKit
 
 class updateLogVC: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        //edit navigation bar
-        self.title = "Update Log"
-        self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "back")
-        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "back")
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-
-
+    //edit navigation bar
+    self.title = "Update Log"
+    self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "back")
+    self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "back")
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+  }
+  
+  
+  
 }

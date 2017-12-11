@@ -72,23 +72,30 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Nwj-TB-LSu" kind="show" id="EPU-G8-Jru"/>
+                                    <action selector="StartBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M6M-oM-HRu"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gqj-3g-Th7">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="gqj-3g-Th7">
                                 <rect key="frame" x="138" y="58" width="98" height="157.5"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Alist-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="rhk-Fh-eRj">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Alist-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="rhk-Fh-eRj">
                                         <rect key="frame" x="0.0" y="0.0" width="98" height="84"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="84" id="iv1-e0-3P2"/>
+                                            <constraint firstAttribute="width" constant="98" id="mRj-T4-n3M"/>
+                                        </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Alist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFg-Mi-egg">
-                                        <rect key="frame" x="0.0" y="84" width="98" height="59"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFg-Mi-egg">
+                                        <rect key="frame" x="0.0" y="85" width="98" height="59"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="59" id="edb-Yc-q2b"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="PatuaOne-Regular" family="Patua One" pointSize="48"/>
                                         <color key="textColor" red="0.99019607840000001" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="v 0.0.1 (BETA)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sng-Cs-7ck">
-                                        <rect key="frame" x="0.0" y="143" width="98" height="14.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 0.0.1 (BETA)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sng-Cs-7ck">
+                                        <rect key="frame" x="0.0" y="145" width="98" height="12.5"/>
                                         <fontDescription key="fontDescription" name="PatuaOne-Regular" family="Patua One" pointSize="12"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -102,25 +109,25 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="BJc-5u-pTK">
                                 <rect key="frame" x="39" y="356" width="177.5" height="105.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="ระบบใหม่อัพเดท 10/12/2017" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAw-XH-WoP">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="ระบบใหม่อัพเดท 10/12/2017" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAw-XH-WoP">
                                         <rect key="frame" x="0.0" y="0.0" width="177.5" height="26.5"/>
                                         <fontDescription key="fontDescription" name="RSU-Light" family="RSU" pointSize="18"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="- ระบบ Authentication" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4o9-Gg-LKa">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="- ระบบ Authentication" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4o9-Gg-LKa">
                                         <rect key="frame" x="0.0" y="26.5" width="141" height="26.5"/>
                                         <fontDescription key="fontDescription" name="RSU-Light" family="RSU" pointSize="18"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="- ระบบรองรับภาษาอังกฤษ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvd-zB-XUA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- ระบบรองรับภาษาอังกฤษ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvd-zB-XUA">
                                         <rect key="frame" x="0.0" y="53" width="165.5" height="26.5"/>
                                         <fontDescription key="fontDescription" name="RSU-Light" family="RSU" pointSize="18"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="- Cloud Database" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FC6-Na-ktC">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="- Cloud Database" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FC6-Na-ktC">
                                         <rect key="frame" x="0.0" y="79.5" width="109.5" height="26"/>
                                         <fontDescription key="fontDescription" name="RSU-Light" family="RSU" pointSize="18"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -152,11 +159,13 @@
                     </view>
                     <connections>
                         <outlet property="startBtn" destination="L23-mA-USo" id="bSc-1x-UKM"/>
+                        <segue destination="Nwj-TB-LSu" kind="show" identifier="notLogin" id="qZp-eO-lZr"/>
+                        <segue destination="6We-Qq-VAD" kind="show" identifier="loginDone" id="aK5-vG-CUs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1727" y="899"/>
+            <point key="canvasLocation" x="-343" y="122"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="6Y8-CF-bNT">
@@ -230,7 +239,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rxc-j1-enG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-343.19999999999999" y="899.10044977511257"/>
+            <point key="canvasLocation" x="-343" y="899"/>
         </scene>
         <!--RegisterVC-->
         <scene sceneID="nyu-et-GYY">
@@ -273,6 +282,15 @@
                                     <action selector="register:" destination="Vhi-gC-EPJ" eventType="touchUpInside" id="3KM-u8-nYu"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOb-Ni-raZ">
+                                <rect key="frame" x="19" y="400" width="336" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.69803921570000005" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="RSU" family="RSU" pointSize="24"/>
+                                <state key="normal" title="เข้าสู่ระบบ">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -290,7 +308,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nA3-fD-fEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-343" y="1640"/>
+            <point key="canvasLocation" x="-343" y="1725"/>
         </scene>
         <!--Alist-->
         <scene sceneID="tq3-ml-JQF">
@@ -409,7 +427,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="ตั้งค่า" id="CLw-Zb-Ze8">
+                            <tableViewSection headerTitle="ผุ้ใช้งาน" id="CLw-Zb-Ze8">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="mPG-NG-981">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
@@ -441,8 +459,31 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="JSC-RP-2dj">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="OYo-YB-N5F">
                                         <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OYo-YB-N5F" id="9Jj-DK-N05">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87R-uF-1tQ">
+                                                    <rect key="frame" x="145" y="6" width="85" height="30"/>
+                                                    <state key="normal" title="ออกจากระบบ">
+                                                        <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="logout:" destination="iwM-EP-RVb" eventType="touchUpInside" id="ZPW-C9-GI6"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="87R-uF-1tQ" firstAttribute="centerY" secondItem="9Jj-DK-N05" secondAttribute="centerY" id="cyA-FC-Uxc"/>
+                                                <constraint firstItem="87R-uF-1tQ" firstAttribute="centerX" secondItem="9Jj-DK-N05" secondAttribute="centerX" id="dZv-Wd-KvU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="JSC-RP-2dj">
+                                        <rect key="frame" x="0.0" y="143.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JSC-RP-2dj" id="FLU-vW-1GJ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -468,7 +509,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="imI-OH-2Kp">
-                                        <rect key="frame" x="0.0" y="143.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="187.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="imI-OH-2Kp" id="7HG-hZ-npY">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -495,7 +536,7 @@
                             <tableViewSection headerTitle="เกี่ยวกับ Alist" id="gD5-JD-Js6">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="NIN-5A-K2Z">
-                                        <rect key="frame" x="0.0" y="243.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="287.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NIN-5A-K2Z" id="QU6-rs-vA4">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -525,7 +566,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="KEE-YC-eW0">
-                                        <rect key="frame" x="0.0" y="287.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="331.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KEE-YC-eW0" id="q5g-RN-dft">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
@@ -553,7 +594,7 @@
                             <tableViewSection headerTitle="ติดต่อเรา" id="NaN-hL-0sf">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="qRH-hy-BGV">
-                                        <rect key="frame" x="0.0" y="387.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="431.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qRH-hy-BGV" id="DNw-i8-Ons">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -583,7 +624,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fLw-VU-9LK">
-                                        <rect key="frame" x="0.0" y="431.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="475.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fLw-VU-9LK" id="T6g-Sn-qGN">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -613,7 +654,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="yNa-NY-Bw9">
-                                        <rect key="frame" x="0.0" y="475.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="519.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yNa-NY-Bw9" id="vAZ-FZ-6uc">
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
@@ -645,10 +686,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="ตั้งค่าการใช้งาน" id="Qvh-v8-vpJ"/>
+                    <connections>
+                        <outlet property="username" destination="hsQ-Az-Zaf" id="jzh-Yb-W22"/>
+                        <segue destination="bog-ub-TN2" kind="unwind" identifier="unwindToRoot" unwindAction="unwindToRootWithSegue:" id="0ae-6S-xkF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ILS-UB-0gO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bog-ub-TN2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3008" y="1725"/>
+            <point key="canvasLocation" x="3007" y="2087"/>
         </scene>
         <!--Update LogVC-->
         <scene sceneID="bt1-OG-Jm2">
@@ -1289,7 +1335,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dmU-Qa-kF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2012" y="1725"/>
+            <point key="canvasLocation" x="2012" y="2087"/>
         </scene>
         <!--Categories-->
         <scene sceneID="M8W-77-m1u">
@@ -1326,7 +1372,7 @@
         <image name="workIcon" width="56" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OMe-UV-PYi"/>
+        <segue reference="aK5-vG-CUs"/>
         <segue reference="hHw-sv-u1S"/>
     </inferredMetricsTieBreakers>
 </document>

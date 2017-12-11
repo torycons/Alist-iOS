@@ -7,16 +7,33 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class preAppVC: UIViewController {
-
-    @IBOutlet weak var startBtn: UIButton!
+  
+  @IBOutlet weak var startBtn: UIButton!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Do any additional setup after loading the view, typically from a nib.
+    startBtn.layer.cornerRadius = 8
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        startBtn.layer.cornerRadius = 8
-
+    let user = Auth.auth().currentUser
+    if let user = user {
+      print(user.email!)
     }
+  }
+  
+  @IBAction func unwindToRoot(segue:UIStoryboardSegue) {
+    
+  }
+  
+  @IBAction func StartBtn(_ sender: Any) {
+    if Auth.auth().currentUser != nil {
+      self.performSegue(withIdentifier: "loginDone", sender: self)
+    } else {
+      self.performSegue(withIdentifier: "notLogin", sender: self)
+    }
+  }
 }
 
