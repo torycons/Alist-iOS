@@ -13,11 +13,15 @@ class LoginVC: UIViewController {
   
   @IBOutlet weak var emailLogin: UITextField!
   @IBOutlet weak var passwordLogin: UITextField!
+  @IBOutlet weak var loginBtn: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
+    self.loginBtn.layer.cornerRadius = 8
+    self.emailLogin.borderStyle = UITextBorderStyle.roundedRect
+    self.passwordLogin.borderStyle = UITextBorderStyle.roundedRect
   }
   
   @IBAction func login(_ sender: Any) {
@@ -31,9 +35,14 @@ class LoginVC: UIViewController {
         
         self.present(errorAlert, animated: true, completion: nil)
       } else {
+        self.emailLogin.text = ""
+        self.passwordLogin.text = ""
         self.performSegue(withIdentifier: "login", sender: self)
       }
     }
+  }
+  
+  @IBAction func unwindToRoot(segue:UIStoryboardSegue) {
   }
   
   override func didReceiveMemoryWarning() {

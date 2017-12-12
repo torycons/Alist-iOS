@@ -13,11 +13,20 @@ class registerVC: UIViewController {
   
   @IBOutlet weak var email: UITextField!
   @IBOutlet weak var password: UITextField!
-  
+  @IBOutlet weak var registerBtn: UIButton!
+
+    
   override func viewDidLoad() {
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
+    registerBtn.layer.cornerRadius = 8
+    email.borderStyle = UITextBorderStyle.roundedRect
+    password.borderStyle = UITextBorderStyle.roundedRect
+  }
+  
+  @IBAction func goToLoginPage(_ sender: Any) {
+    self.performSegue(withIdentifier: "unwindToRoot", sender: self)
   }
   
   @IBAction func register(_ sender: Any) {

@@ -24,10 +24,6 @@ class preAppVC: UIViewController {
     }
   }
   
-  @IBAction func unwindToRoot(segue:UIStoryboardSegue) {
-    
-  }
-  
   @IBAction func StartBtn(_ sender: Any) {
     if Auth.auth().currentUser != nil {
       self.performSegue(withIdentifier: "loginDone", sender: self)

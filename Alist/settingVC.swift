@@ -63,7 +63,7 @@ class settingVC: UITableViewController {
     alertLogout.addAction(UIAlertAction(title: "ใช่", style: .cancel, handler: { (action) in
       let firebaseAuth = Auth.auth()
       try! firebaseAuth.signOut()
-      self.performSegue(withIdentifier: "unwindToRoot", sender: self)
+      self.performSegue(withIdentifier: "unwindToLogin", sender: self)
     }))
     
     self.present(alertLogout, animated: true, completion: nil)
