@@ -14,6 +14,8 @@
 		D031EB001E20F3E100CAB8BC /* addTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031EAFF1E20F3E100CAB8BC /* addTaskVC.swift */; };
 		D031EB061E210C5000CAB8BC /* webVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031EB051E210C5000CAB8BC /* webVC.swift */; };
 		D031FD661E27F7DE009296C0 /* updateLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D031FD651E27F7DE009296C0 /* updateLogVC.swift */; };
+		D06B6FF81FE042B7008D40E1 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06B6FF71FE042B7008D40E1 /* List.swift */; };
+		D06B6FFA1FE04E00008D40E1 /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D06B6FFB1FE04E00008D40E1 /* SVProgressHUD.framework */; };
 		D0C66BEC1FDE6A1F00CEC0B7 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C66BEB1FDE6A1F00CEC0B7 /* LoginVC.swift */; };
 		D0C66BEE1FDE6A5A00CEC0B7 /* registerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C66BED1FDE6A5A00CEC0B7 /* registerVC.swift */; };
 		D0C74DDC1EA1E96000356C81 /* categoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C74DDB1EA1E96000356C81 /* categoryVC.swift */; };
@@ -42,6 +44,8 @@
 		D031EAFF1E20F3E100CAB8BC /* addTaskVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addTaskVC.swift; sourceTree = "<group>"; };
 		D031EB051E210C5000CAB8BC /* webVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = webVC.swift; sourceTree = "<group>"; };
 		D031FD651E27F7DE009296C0 /* updateLogVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = updateLogVC.swift; sourceTree = "<group>"; };
+		D06B6FF71FE042B7008D40E1 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		D06B6FFB1FE04E00008D40E1 /* SVProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0C66BEB1FDE6A1F00CEC0B7 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		D0C66BED1FDE6A5A00CEC0B7 /* registerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerVC.swift; sourceTree = "<group>"; };
 		D0C74DDB1EA1E96000356C81 /* categoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = categoryVC.swift; sourceTree = "<group>"; };
@@ -67,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D06B6FFA1FE04E00008D40E1 /* SVProgressHUD.framework in Frameworks */,
 				AE17063DD47DAAF95D7C5063 /* Pods_Alist.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,6 +91,7 @@
 		75FADA2B26C3E5496F58E371 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D06B6FFB1FE04E00008D40E1 /* SVProgressHUD.framework */,
 				9C046382BD6B354E783663B3 /* Pods_Alist.framework */,
 			);
 			name = Frameworks;
@@ -114,6 +120,14 @@
 				D0EE6BE11E2030FD004850A6 /* bgPrePage.jpg */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		D06B6FF91FE04323008D40E1 /* CustomClass */ = {
+			isa = PBXGroup;
+			children = (
+				D06B6FF71FE042B7008D40E1 /* List.swift */,
+			);
+			name = CustomClass;
 			sourceTree = "<group>";
 		};
 		D0CE6BD01EA22360006144C1 /* CustomView */ = {
@@ -146,6 +160,7 @@
 		D0EE6BCA1E20302A004850A6 /* Alist */ = {
 			isa = PBXGroup;
 			children = (
+				D06B6FF91FE04323008D40E1 /* CustomClass */,
 				D0CE6BD01EA22360006144C1 /* CustomView */,
 				D001DC321E20CED000488109 /* images */,
 				D001DC2F1E20CE7B00488109 /* ViewControllers */,
@@ -275,12 +290,16 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Alist/Pods-Alist-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +337,7 @@
 				D0C74DDE1EA1F4B100356C81 /* categoryListVC.swift in Sources */,
 				D0000B261E255B8E00A4993C /* settingVC.swift in Sources */,
 				D001DC311E20CEAE00488109 /* mainListVC.swift in Sources */,
+				D06B6FF81FE042B7008D40E1 /* List.swift in Sources */,
 				D0EE6BCE1E20302A004850A6 /* preAppVC.swift in Sources */,
 				D031FD661E27F7DE009296C0 /* updateLogVC.swift in Sources */,
 				D0C66BEC1FDE6A1F00CEC0B7 /* LoginVC.swift in Sources */,

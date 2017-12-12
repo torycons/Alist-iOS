@@ -7,31 +7,53 @@
 //
 
 import UIKit
-import CoreData
 import FirebaseAuth
+import FirebaseDatabase
+import SVProgressHUD
 
 class mainListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   @IBOutlet weak var taskListTable: UITableView!
   
-  
   let patuaFont = UIFont(name: "PatuaOne-Regular", size: 20)
+  let userId = Auth.auth().currentUser?.uid
+  var ref: DatabaseReference! = Database.database().reference()
   var myList : [AnyObject]? = []
   
   override func viewWillAppear(_ animated: Bool) {
     self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: patuaFont!, NSAttributedStringKey.foregroundColor: UIColor.white]
     
-    let myAppDelegate = UIApplication.shared.delegate as! AppDelegate
-    let myContext = myAppDelegate.persistentContainer.viewContext
-    let myFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Tasks")
+    SVProgressHUD.show()
+    myList = []
+    self.taskListTable.reloadData()
     
-    do{
-      myList = try myContext.fetch(myFetchRequest)
-    } catch let error as NSError {
-      print(error.description)
+    ref.child("user").child(userId!).observe(.childAdded) { (snapshot) in
+      let mySnapshotValue = snapshot.value as! Dictionary<String, Any>
+      let listDate = mySnapshotValue["listDate"]!
+      let listDetail = mySnapshotValue["listDetail"]!
+      let listImportant = mySnapshotValue["listImportant"]!
+      let listTopic = mySnapshotValue["listTopic"]!
+      let listType = mySnapshotValue["listType"]!
+      
+      let aList = List()
+      aList.listTopic = listTopic as! String
+      aList.listDetail = listDetail as! String
+      aList.listImportant = listImportant as! Bool
+      aList.listDate = listDate as! String
+      aList.listType = listType as! String
+      aList.listKey = snapshot.key
+      
+      self.myList?.append(aList)
+      
+      SVProgressHUD.dismiss()
+      self.taskListTable.reloadData()
     }
     
-    self.taskListTable.reloadData()
+    ref.child("user").child(userId!).observe(.value) { (snapshot) in
+      if !snapshot.exists(){
+        SVProgressHUD.dismiss()
+      }
+    }
   }
   
   override func viewDidLoad() {
@@ -53,17 +75,13 @@ class mainListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! customCell
+    let myTask = myList![indexPath.row]
     
-    let myListTask : NSManagedObject = myList![indexPath.row] as! NSManagedObject
-    let myTaskTopic = myListTask.value(forKey: "listTopic") as! String
-    let myTaskDetail = myListTask.value(forKey: "listDetail") as! String
-    let myTaskType = myListTask.value(forKey: "listType") as! String
-    let myTaskDate = myListTask.value(forKey: "listDate") as! String
-    let myTaskImportant = myListTask.value(forKey: "listImportant") as! Bool
-    
-    cell.taskTopic.text = myTaskTopic
-    cell.taskDetail.text = myTaskDetail
-    cell.taskDate.text = myTaskDate
+    cell.taskTopic.text = myTask.listTopic
+    cell.taskDetail.text = myTask.listDetail
+    cell.taskDate.text = myTask.listDate
+
+    let myTaskType = myTask.listType
     
     if myTaskType == "Work" {
       cell.taskType.image = UIImage(named: "workIcon")
@@ -74,65 +92,35 @@ class mainListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     } else if myTaskType == "Other" {
       cell.taskType.image = UIImage(named: "otherIcon")
     }
-    
-    if myTaskImportant {
+
+    if myList![indexPath.row].listImportant {
       cell.taskImportant.image = UIImage(named: "heart-full")
     } else {
       cell.taskImportant.image = UIImage(named: "heart-blank")
     }
-    
-    
+
+
     return cell
   }
   
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-    let myAppDelegate = UIApplication.shared.delegate as! AppDelegate
-    let myContext = myAppDelegate.persistentContainer.viewContext
-    
     
     if editingStyle == .delete {
-      myContext.delete(myList![indexPath.row] as! NSManagedObject)
-      myList!.remove(at: indexPath.row)
-      tableView.deleteRows(at: [indexPath], with: .fade)
-      
-      do {
-        try myContext.save()
-      } catch let error as NSError {
-        print(error.description)
+      let deleteId = myList![indexPath.row].listKey
+      ref.child("user").child(userId!).child(deleteId!).removeValue { (err, ref) in
+        if err != nil {
+          print(err!)
+        } else {
+          self.myList!.remove(at: indexPath.row)
+          tableView.deleteRows(at: [indexPath], with: .fade)
+        }
       }
     }
   }
-  
-  //    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-  //        let myAppDelegate = UIApplication.shared.delegate as! AppDelegate
-  //        let myContext = myAppDelegate.persistentContainer.viewContext
-  //
-  //        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") {action in
-  //            //handle delete
-  //            myContext.delete(self.myList![indexPath.row] as! NSManagedObject)
-  //            self.myList!.remove(at: indexPath.row)
-  //            tableView.deleteRows(at: [indexPath], with: .fade)
-  //
-  //            do {
-  //                try myContext.save()
-  //            } catch let error as NSError {
-  //                print(error.description)
-  //            }
-  //        }
-  //
-  //        let editAction = UITableViewRowAction(style: .normal, title: "Done") {action in
-  //            //handle edit
-  //
-  //        }
-  //
-  //        return [deleteAction, editAction]
-  //    }
-  
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     let backItem = UIBarButtonItem()
     backItem.title = ""
     navigationItem.backBarButtonItem = backItem
-    
   }
 }

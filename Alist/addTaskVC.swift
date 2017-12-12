@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import CoreData
+import FirebaseDatabase
+import FirebaseAuth
 
 class addTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
   
@@ -25,8 +26,9 @@ class addTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
   let thonburiFont = UIFont(name: "Thonburi", size: 17)
   let typeArr : [String] = ["Personal", "Work", "Hobby", "Other"]
   let typePickerView = UIPickerView()
+  let user = Auth.auth().currentUser
   
-  var myListTask : NSManagedObject?
+  var ref: DatabaseReference! = Database.database().reference()
   
   override func viewWillAppear(_ animated: Bool) {
     // set font for navigationBar
@@ -64,20 +66,6 @@ class addTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
     
     //corner radius for saveBtn
     saveBtn.layer.cornerRadius = 8
-    
-    if myListTask != nil {
-      let myTaskTopic = myListTask?.value(forKey: "listTopic") as! String
-      let myTaskDetail = myListTask?.value(forKey: "listDetail") as! String
-      let myTaskType = myListTask?.value(forKey: "listType") as! String
-      let myTaskDate = myListTask?.value(forKey: "listDate") as! String
-      let myTaskImportant = myListTask?.value(forKey: "listImportant") as! Bool
-      
-      topicTextView.text = myTaskTopic
-      detailTextView.text = myTaskDetail
-      typeBtn.text = myTaskType
-      dateBtn.text = myTaskDate
-      importantBtn.isOn = myTaskImportant
-    }
   }
   
   
@@ -144,42 +132,21 @@ class addTaskVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,
       self.present(alert, animated: true, completion: nil)
       
     } else {
+      // save to Firebase
+      let listForUpdate = [
+        "listTopic": topicTextView.text!,
+        "listDetail": detailTextView.text!,
+        "listType": typeBtn.text!,
+        "listDate": dateBtn.text!,
+        "listImportant": Bool(importantBtn.isOn)
+        ] as [String : Any]
       
-      // app save with core data
-      let myAppDelegate = UIApplication.shared.delegate as! AppDelegate
-      let myContext = myAppDelegate.persistentContainer.viewContext
-      
-      if myListTask != nil{
-        myListTask?.setValue(topicTextView.text!, forKey: "listTopic")
-        myListTask?.setValue(detailTextView.text!, forKey: "listDetail")
-        myListTask?.setValue(typeBtn.text!, forKey: "listType")
-        myListTask?.setValue(dateBtn.text!, forKey: "listDate")
-        myListTask?.setValue(Bool(importantBtn.isOn), forKey: "listImportant")
-      } else {
-        let newTaskList = NSEntityDescription.insertNewObject(forEntityName: "Tasks", into: myContext)
-        newTaskList.setValue(topicTextView.text!, forKey: "listTopic")
-        newTaskList.setValue(detailTextView.text!, forKey: "listDetail")
-        newTaskList.setValue(typeBtn.text!, forKey: "listType")
-        newTaskList.setValue(dateBtn.text!, forKey: "listDate")
-        newTaskList.setValue(Bool(importantBtn.isOn), forKey: "listImportant")
-      }
-      
-      do{
-        try myContext.save()
-        print("save data done")
-      } catch let error as NSError{
-        print(error.description + " : can't save data")
-      }
+      self.ref.child("user").child((user?.uid)!).childByAutoId().setValue(listForUpdate)
       
       guard ((navigationController?.popViewController(animated: true)) != nil) else {
         print("No nevigation Controller")
         return
       }
     }
-    
   }
-  
-  
-  
-  
 }

@@ -27,6 +27,9 @@ class settingVC: UITableViewController {
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    
+    let user = Auth.auth().currentUser
+    username.text = user?.email
   }
   
   @IBAction func deleteAllBtn(_ sender: Any) {

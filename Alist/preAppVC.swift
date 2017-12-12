@@ -19,9 +19,6 @@ class preAppVC: UIViewController {
     startBtn.layer.cornerRadius = 8
     
     let user = Auth.auth().currentUser
-    if let user = user {
-      print(user.email!)
-    }
   }
   
   @IBAction func StartBtn(_ sender: Any) {
