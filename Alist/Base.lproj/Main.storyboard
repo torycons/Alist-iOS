@@ -846,7 +846,7 @@
                     <navigationItem key="navigationItem" title="ตั้งค่าการใช้งาน" id="Qvh-v8-vpJ"/>
                     <connections>
                         <outlet property="username" destination="hsQ-Az-Zaf" id="jzh-Yb-W22"/>
-                        <segue destination="bog-ub-TN2" kind="unwind" identifier="unwindToLogin" unwindAction="unwindToRootWithSegue:" id="0ae-6S-xkF"/>
+                        <segue destination="bog-ub-TN2" kind="unwind" identifier="unwindToPreApp" unwindAction="unwindToPreAppWithSegue:" id="JBp-8b-xf4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ILS-UB-0gO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -882,13 +882,40 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Add List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bff-bg-FN8">
-                                <rect key="frame" x="48" y="130" width="73.5" height="21"/>
+                                <rect key="frame" x="48" y="130" width="74" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dP-i7-eJS">
-                                <rect key="frame" x="48" y="188" width="81.5" height="21"/>
+                                <rect key="frame" x="48" y="188" width="82" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 0.0.2 - 12 December 2017" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amo-fM-roC">
+                                <rect key="frame" x="16" y="230" width="264" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="3PD-Ui-Ftn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Authentication" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1K0-SS-fqU">
+                                <rect key="frame" x="48" y="297" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Cloud Database" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pec-Gs-3pP">
+                                <rect key="frame" x="48" y="268" width="133" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Support other language" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOG-Nr-8hd">
+                                <rect key="frame" x="48" y="326" width="192" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -898,16 +925,28 @@
                         <constraints>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FzT-Wv-zd9" secondAttribute="trailing" constant="20" symbolic="YES" id="1sK-c0-9xz"/>
                             <constraint firstItem="Bff-bg-FN8" firstAttribute="leading" secondItem="FzT-Wv-zd9" secondAttribute="leading" constant="32" id="7bm-s2-ZZ9"/>
+                            <constraint firstItem="DOG-Nr-8hd" firstAttribute="leading" secondItem="1K0-SS-fqU" secondAttribute="leading" id="GZ9-Xr-bIs"/>
                             <constraint firstItem="9Ur-IX-cq3" firstAttribute="leading" secondItem="Bff-bg-FN8" secondAttribute="leading" id="HVJ-IT-bKn"/>
                             <constraint firstItem="2dP-i7-eJS" firstAttribute="leading" secondItem="9Ur-IX-cq3" secondAttribute="leading" id="He5-el-Cc1"/>
                             <constraint firstItem="FzT-Wv-zd9" firstAttribute="leading" secondItem="d8G-13-ir4" secondAttribute="leadingMargin" id="ImH-hq-44s"/>
                             <constraint firstItem="2dP-i7-eJS" firstAttribute="top" secondItem="9Ur-IX-cq3" secondAttribute="bottom" constant="8" id="K97-xO-nzx"/>
+                            <constraint firstItem="1K0-SS-fqU" firstAttribute="top" secondItem="Pec-Gs-3pP" secondAttribute="bottom" constant="8" id="KrO-6z-ggA"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="amo-fM-roC" secondAttribute="trailing" constant="20" symbolic="YES" id="QHG-1K-uke"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="1K0-SS-fqU" secondAttribute="trailing" constant="20" symbolic="YES" id="RCS-K5-4vb"/>
+                            <constraint firstItem="amo-fM-roC" firstAttribute="top" secondItem="2dP-i7-eJS" secondAttribute="bottom" constant="21" id="Sby-hw-gcS"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Bff-bg-FN8" secondAttribute="trailing" constant="20" symbolic="YES" id="TVh-oH-GLm"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DOG-Nr-8hd" secondAttribute="trailing" constant="20" symbolic="YES" id="WH3-un-PE9"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Pec-Gs-3pP" secondAttribute="trailing" constant="20" symbolic="YES" id="XNd-Jo-XGR"/>
                             <constraint firstItem="FzT-Wv-zd9" firstAttribute="top" secondItem="lT1-9b-q4L" secondAttribute="bottom" constant="28" id="b25-d0-e1D"/>
                             <constraint firstItem="Bff-bg-FN8" firstAttribute="top" secondItem="FzT-Wv-zd9" secondAttribute="bottom" constant="17" id="b3k-ZX-aAQ"/>
+                            <constraint firstItem="Pec-Gs-3pP" firstAttribute="leading" secondItem="2dP-i7-eJS" secondAttribute="leading" id="b7m-AI-w5P"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9Ur-IX-cq3" secondAttribute="trailing" constant="20" symbolic="YES" id="c7V-y1-Mya"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2dP-i7-eJS" secondAttribute="trailing" constant="20" symbolic="YES" id="cfC-LW-uHI"/>
+                            <constraint firstItem="DOG-Nr-8hd" firstAttribute="top" secondItem="1K0-SS-fqU" secondAttribute="bottom" constant="8" id="jhI-nm-juG"/>
                             <constraint firstItem="9Ur-IX-cq3" firstAttribute="top" secondItem="Bff-bg-FN8" secondAttribute="bottom" constant="8" id="khe-yT-EOm"/>
+                            <constraint firstItem="Pec-Gs-3pP" firstAttribute="leading" secondItem="amo-fM-roC" secondAttribute="leading" constant="32" id="p2F-GR-CgC"/>
+                            <constraint firstItem="1K0-SS-fqU" firstAttribute="leading" secondItem="Pec-Gs-3pP" secondAttribute="leading" id="q9Z-Sg-bXO"/>
+                            <constraint firstItem="Pec-Gs-3pP" firstAttribute="top" secondItem="amo-fM-roC" secondAttribute="bottom" constant="17" id="zXY-GP-09b"/>
                         </constraints>
                     </view>
                 </viewController>

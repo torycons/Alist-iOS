@@ -8,12 +8,15 @@
 
 import UIKit
 import FirebaseAuth
-import CoreData
+import FirebaseDatabase
 
 class settingVC: UITableViewController {
   
   @IBOutlet weak var username: UILabel!
+  
   let thonburiFont = UIFont(name: "Thonburi", size: 17)
+  var ref: DatabaseReference! = Database.database().reference()
+  let user = Auth.auth().currentUser
   
   override func viewWillAppear(_ animated: Bool) {
     self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: thonburiFont!, NSAttributedStringKey.foregroundColor: UIColor.white]
@@ -21,14 +24,6 @@ class settingVC: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = false
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    
-    let user = Auth.auth().currentUser
     username.text = user?.email
   }
   
@@ -37,23 +32,12 @@ class settingVC: UITableViewController {
     // alert if don't insert every text field
     let alert = UIAlertController(title: "ลบข้อมูลทั้งหมด", message: "คุณต้องการลบข้อมูลรายการที่ต้องทำทั้งหมดหรือไม่", preferredStyle: UIAlertControllerStyle.alert)
     
-    alert.addAction(UIAlertAction(title: "ใช่", style: UIAlertActionStyle.default, handler: { action in
-      
-      let myAppDelegate = UIApplication.shared.delegate as! AppDelegate
-      let myContext = myAppDelegate.persistentContainer.viewContext
-      let myFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Tasks")
-      let deleteAllData = NSBatchDeleteRequest(fetchRequest: myFetchRequest)
-      
+    alert.addAction(UIAlertAction(title: "ใช่", style: UIAlertActionStyle.cancel, handler: { action in
+      self.ref.child("user").child((self.user?.uid)!).removeValue()
       self.tabBarController?.tabBar.items?.first?.badgeValue = nil
-      
-      do {
-        try myContext.execute(deleteAllData)
-      } catch let error as NSError {
-        print(error.description + ": Can't delete all of data")
-      }
     }))
     
-    alert.addAction(UIAlertAction(title: "ยกเลิก", style: UIAlertActionStyle.cancel, handler: nil))
+    alert.addAction(UIAlertAction(title: "ยกเลิก", style: UIAlertActionStyle.default, handler: nil))
     
     self.present(alert, animated: true, completion: nil)
   }
@@ -66,7 +50,7 @@ class settingVC: UITableViewController {
     alertLogout.addAction(UIAlertAction(title: "ใช่", style: .cancel, handler: { (action) in
       let firebaseAuth = Auth.auth()
       try! firebaseAuth.signOut()
-      self.performSegue(withIdentifier: "unwindToLogin", sender: self)
+      self.performSegue(withIdentifier: "unwindToPreApp", sender: self)
     }))
     
     self.present(alertLogout, animated: true, completion: nil)

@@ -16,9 +16,10 @@ class preAppVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
-    startBtn.layer.cornerRadius = 8
-    
-    let user = Auth.auth().currentUser
+    startBtn.layer.cornerRadius = 8    
+  }
+  
+  @IBAction func unwindToPreApp(segue:UIStoryboardSegue) {
   }
   
   @IBAction func StartBtn(_ sender: Any) {

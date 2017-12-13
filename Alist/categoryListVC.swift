@@ -7,7 +7,9 @@
 //
 
 import UIKit
-import CoreData
+import FirebaseAuth
+import FirebaseDatabase
+import SVProgressHUD
 
 class categoryListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
@@ -15,49 +17,71 @@ class categoryListVC: UIViewController, UITableViewDataSource, UITableViewDelega
   var page : String = ""
   var myList : [AnyObject]? = []
   
+  let userId = Auth.auth().currentUser?.uid
+  var ref: DatabaseReference? = Database.database().reference()
+  
   @IBOutlet weak var imageTopic: UIImageView!
   @IBOutlet weak var topicLbl: UILabel!
   @IBOutlet weak var categoryTable: UITableView!
   
+  func fetchDataPag(page: String) {
+    print("1", page)
+    ref?.child("user").child(userId!).observe(.childAdded, with: { (snapshot) in
+      let mySnapshotValue = snapshot.value as! Dictionary<String, Any>
+      let listDate = mySnapshotValue["listDate"]!
+      let listDetail = mySnapshotValue["listDetail"]!
+      let listImportant = mySnapshotValue["listImportant"]!
+      let listTopic = mySnapshotValue["listTopic"]!
+      let listType = mySnapshotValue["listType"]!
+      
+      let aList = List()
+      aList.listTopic = listTopic as! String
+      aList.listDetail = listDetail as! String
+      aList.listImportant = listImportant as! Bool
+      aList.listDate = listDate as! String
+      aList.listType = listType as! String
+      aList.listKey = snapshot.key
+      
+      if page == "Favorite" {
+        if String(describing: listImportant) == "1" {
+          self.myList?.append(aList)
+        }
+      } else {
+        if String(describing: listType) == page {
+          self.myList?.append(aList)
+        }
+      }
+      
+      self.categoryTable.reloadData()
+      SVProgressHUD.dismiss()
+    })
+  }
+  
   override func viewWillAppear(_ animated: Bool) {
     self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: thonburiFont!, NSAttributedStringKey.foregroundColor: UIColor.white]
     
-    // read data from database
-    let myAppDelegate = UIApplication.shared.delegate as! AppDelegate
-    let myContext = myAppDelegate.persistentContainer.viewContext
-    let myFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Tasks")
-    myFetchRequest.returnsObjectsAsFaults = false
+    myList = []
+    self.categoryTable.reloadData()
+    SVProgressHUD.show()
     
     if page == "Favorite" {
-      let myPredicate = NSPredicate(format: "listImportant == true")
-      myFetchRequest.predicate = myPredicate
+      fetchDataPag(page: "Favorite")
     } else if page == "Personal" {
-      let myPredicate = NSPredicate(format: "listType == 'Personal'")
-      myFetchRequest.predicate = myPredicate
+      fetchDataPag(page: "Personal")
     } else if page == "Hobby" {
-      let myPredicate = NSPredicate(format: "listType == 'Hobby'")
-      myFetchRequest.predicate = myPredicate
+      fetchDataPag(page: "Hobby")
     } else if page == "Work" {
-      let myPredicate = NSPredicate(format: "listType == 'Work'")
-      myFetchRequest.predicate = myPredicate
+      fetchDataPag(page: "Work")
     } else if page == "Other" {
-      let myPredicate = NSPredicate(format: "listType == 'Other'")
-      myFetchRequest.predicate = myPredicate
+      fetchDataPag(page: "Other")
     }
-    
-    do{
-      myList = try myContext.fetch(myFetchRequest)
-    } catch let error as NSError {
-      print(error.description)
-    }
-    
+
     self.categoryTable.reloadData()
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     self.title = "Category"
-    // Do any additional setup after loading the view.
     
     categoryTable.dataSource = self
     categoryTable.delegate = self
@@ -86,18 +110,13 @@ class categoryListVC: UIViewController, UITableViewDataSource, UITableViewDelega
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! customCategoryCell
+    let myTask = myList![indexPath.row]
     
-    let myListTask : NSManagedObject = myList![indexPath.row] as! NSManagedObject
-    let myTaskTopic = myListTask.value(forKey: "listTopic") as! String
-    let myTaskDetail = myListTask.value(forKey: "listDetail") as! String
-    let myTaskDate = myListTask.value(forKey: "listDate") as! String
-    let myTaskImportant = myListTask.value(forKey: "listImportant") as! Bool
+    cell.topicCatCell.text = myTask.listTopic
+    cell.detailCatCell.text = myTask.listDetail
+    cell.dateCatCell.text = myTask.listDate
     
-    cell.topicCatCell.text = myTaskTopic
-    cell.detailCatCell.text = myTaskDetail
-    cell.dateCatCell.text = myTaskDate
-    
-    if myTaskImportant {
+    if myList![indexPath.row].listImportant {
       cell.importantCatCell.image = UIImage(named: "heart-full")
     } else {
       cell.importantCatCell.image = UIImage(named: "heart-blank")
@@ -107,19 +126,16 @@ class categoryListVC: UIViewController, UITableViewDataSource, UITableViewDelega
   }
   
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-    let myAppDelegate = UIApplication.shared.delegate as! AppDelegate
-    let myContext = myAppDelegate.persistentContainer.viewContext
-    
     
     if editingStyle == .delete {
-      myContext.delete(myList![indexPath.row] as! NSManagedObject)
-      myList!.remove(at: indexPath.row)
-      tableView.deleteRows(at: [indexPath], with: .fade)
-      
-      do {
-        try myContext.save()
-      } catch let error as NSError {
-        print(error.description)
+      let deleteId = myList![indexPath.row].listKey
+      ref?.child("user").child(userId!).child(deleteId!).removeValue { (err, ref) in
+        if err != nil {
+          print(err!)
+        } else {
+          self.myList!.remove(at: indexPath.row)
+          tableView.deleteRows(at: [indexPath], with: .fade)
+        }
       }
     }
   }
