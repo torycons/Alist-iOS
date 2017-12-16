@@ -61,5 +61,4 @@ class settingVC: UITableViewController {
     backItem.title = ""
     navigationItem.backBarButtonItem = backItem
   }
-  
 }

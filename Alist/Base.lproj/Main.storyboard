@@ -94,7 +94,7 @@
                                         <color key="textColor" red="0.99019607840000001" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 0.0.1 (BETA)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sng-Cs-7ck">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="v 0.0.2 (BETA)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sng-Cs-7ck">
                                         <rect key="frame" x="0.0" y="145" width="98" height="12.5"/>
                                         <fontDescription key="fontDescription" name="PatuaOne-Regular" family="Patua One" pointSize="12"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1569,7 +1569,7 @@
         <image name="workIcon" width="56" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bwj-zB-bb1"/>
+        <segue reference="aK5-vG-CUs"/>
         <segue reference="hHw-sv-u1S"/>
     </inferredMetricsTieBreakers>
 </document>

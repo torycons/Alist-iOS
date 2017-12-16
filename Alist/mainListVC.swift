@@ -63,7 +63,6 @@ class mainListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    
     if myList!.count > 0 {
       tabBarController?.tabBar.items?.first?.badgeValue = String(myList!.count)
     } else {
@@ -99,12 +98,10 @@ class mainListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
       cell.taskImportant.image = UIImage(named: "heart-blank")
     }
 
-
     return cell
   }
   
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-    
     if editingStyle == .delete {
       let deleteId = myList![indexPath.row].listKey
       ref.child("user").child(userId!).child(deleteId!).removeValue { (err, ref) in

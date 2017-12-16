@@ -16,20 +16,8 @@ class categoryVC: UITableViewController {
     self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: thonburiFont!, NSAttributedStringKey.foregroundColor: UIColor.white]
   }
   
-  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = false
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-  }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
   
   // MARK: - Table view data source
@@ -53,32 +41,20 @@ class categoryVC: UITableViewController {
     navigationItem.backBarButtonItem = backItem
     
     if segue.identifier == "favorite" {
-      
       let categoryList = segue.destination as! categoryListVC
       categoryList.page = "Favorite"
-      
     } else if segue.identifier == "personal" {
-      
       let categoryList = segue.destination as! categoryListVC
       categoryList.page = "Personal"
-      
     } else if segue.identifier == "hobby" {
-      
       let categoryList = segue.destination as! categoryListVC
       categoryList.page = "Hobby"
-      
     } else if segue.identifier == "work" {
-      
       let categoryList = segue.destination as! categoryListVC
       categoryList.page = "Work"
-      
     } else if segue.identifier == "other" {
-      
       let categoryList = segue.destination as! categoryListVC
       categoryList.page = "Other"
-      
     }
   }
-  
-  
 }

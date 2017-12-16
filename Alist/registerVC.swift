@@ -14,7 +14,6 @@ class registerVC: UIViewController {
   @IBOutlet weak var email: UITextField!
   @IBOutlet weak var password: UITextField!
   @IBOutlet weak var registerBtn: UIButton!
-
     
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -51,12 +50,6 @@ class registerVC: UIViewController {
       }
     }
   }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-  
   
   /*
    // MARK: - Navigation

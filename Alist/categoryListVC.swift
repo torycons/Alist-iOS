@@ -55,6 +55,12 @@ class categoryListVC: UIViewController, UITableViewDataSource, UITableViewDelega
       self.categoryTable.reloadData()
       SVProgressHUD.dismiss()
     })
+    
+    ref?.child("user").child(userId!).observe(.value) { (snapshot) in
+      if !snapshot.exists(){
+        SVProgressHUD.dismiss()
+      }
+    }
   }
   
   override func viewWillAppear(_ animated: Bool) {
