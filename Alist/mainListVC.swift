@@ -51,9 +51,9 @@ class mainListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     ref.child("user").child(userId!).observe(.value) { (snapshot) in
       print(snapshot.childrenCount)
-//      if !snapshot.exists(){
-//        SVProgressHUD.dismiss()
-//      }
+      if !snapshot.exists(){
+        SVProgressHUD.dismiss()
+      }
     }
   }
   
